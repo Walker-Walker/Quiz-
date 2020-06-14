@@ -1,0 +1,59 @@
+body {
+    background-color: white;
+}
+
+
+
+.view-high-scores {
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 15px;
+    color:black;
+    display:flex;
+    justify-content:flex-start;
+    margin:0;
+}
+.timer {
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 15px;
+    color:black;
+    display:flex;
+    justify-content: flex-end;
+    margin:0;
+}
+
+.quiz-content {
+    display: flex;
+    justify-content: center;
+
+    
+}
+
+#quiz-questions {
+    display: none;
+}
+
+.question {
+    font-family: 'Courier New', Courier, monospace;
+    color: purple;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.multp-choice-answers {
+    font-family: 'Courier New', Courier, monospace;
+    color: purple;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* .multp-choice-answers:button hover animation for possible answers?? then add eventlistener??  */
+
+.wrong-right {
+    display:flex;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    size:50px;
+    font-weight: bolder;
+}
