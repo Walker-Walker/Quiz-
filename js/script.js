@@ -13,23 +13,19 @@
 //
 
 
-// button in html
-
+    // button in html
     //addEventListener for button start countdown function and start quiz question pages...
-        //countdown function
-        
+        //countdown function    
     //Quiz page in html with buttons for all multiple choice answers...
-    
 
     // set up html with basic structure : main element, ul and child li elements , with button classes and id's for the queryselectors...for dynamic application...
 
     //statements to be used: querey selectors, getElementbyId, JSONstringify If i use local storage turn my array into a string....will have to turn data into a string, 
     // document.createElement, appendChild,setInterval(), element.setAttribute, 
     
-    //countdown timer 
-// Question / Answer Array
 
-// 
+
+
 
 //Timer / COUNTDOWN
 
@@ -70,13 +66,13 @@ let questions = [
         correctAnswer:0
     },
     {
-        question: " Which one is a For Loop ? ",
+        question: " SVG stands for ? ",
         answerChoices : [
-            "for (i = 0 ; i <subject.length; i++)",
-            "for {i = 0, i <subject.length, i++)",
-            "for (i = 0; i >subject.length, i++)"
+            "Scalable Visceral Graphics",
+            "Scalable Vector Graphics",
+            "Science Vector Green"
         ],
-        correctAnswer:0
+        correctAnswer:1
     },
 ];
 
@@ -98,7 +94,7 @@ function displayQuestions() {
 } 
 
 // on click start quiz call display questions function
-document.getElementById("start-quiz").onclick = function() {
+    document.getElementById("start-quiz").onclick = function() {
     document.getElementById("Intro").style.display = "none";
     displayQuestions()
 };
@@ -122,14 +118,18 @@ function clearCorrect () {
 //hide last question and go to score section...
 function endQuiz() {
     document.getElementById("quiz-questions").style.display = "none";
-    document.getElementById("final-score").style.display = "block";
-    document.getElementById("final-score").textContent ="Good JOB "
-    
-    //   call score section ****
-}
 
+    document.getElementById("final-score").style.display = "block";
+    document.getElementById("final-score").textContent ="All Done your final score is..."
+    //enter initials...input box... 
+//   call high score section ****
+//   show initials and score
+//   go back button-restart quiz 
+//   clear high scores button-clear data in local storage
 
 //document.onclick('.start-btn')
+}
+
 
 
 document.getElementById("answer-1").onclick = function() {

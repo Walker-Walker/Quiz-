@@ -67,6 +67,7 @@ body {
 #correct {
     display:flex;
     justify-content: center;
+    flex-wrap: wrap;
     font-family: 'Courier New', Courier, monospace;
     size:50px;
     font-weight: bolder;
@@ -75,6 +76,7 @@ body {
 #incorrect {
     display:flex;
     justify-content: center;
+    flex-wrap:wrap;
     font-family: 'Courier New', Courier, monospace;
     size:50px;
     font-weight: bolder;
