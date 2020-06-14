@@ -10,7 +10,8 @@ body {
     font-size: 15px;
     color:black;
     display:flex;
-    justify-content:flex-start;
+    flex-wrap: wrap;
+    justify-content:center;
     margin:0;
 }
 .timer {
@@ -19,7 +20,8 @@ body {
     font-size: 15px;
     color:black;
     display:flex;
-    justify-content: flex-end;
+    flex-wrap:wrap;
+    justify-content: center;
     margin:0;
 }
 
@@ -41,6 +43,18 @@ body {
     font-weight: bold;
 }
 
+#answer-1{
+    display:flex;
+    flex-wrap:wrap;
+}
+#answer-2{
+    display:flex;
+    flex-wrap:wrap;
+}
+#answer-3{
+    display:flex;
+    flex-wrap:wrap;
+}
 .multp-choice-answers {
     font-family: 'Courier New', Courier, monospace;
     color: purple;
@@ -50,7 +64,15 @@ body {
 
 /* .multp-choice-answers:button hover animation for possible answers?? then add eventlistener??  */
 
-.wrong-right {
+#correct {
+    display:flex;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    size:50px;
+    font-weight: bolder;
+}
+
+#incorrect {
     display:flex;
     justify-content: center;
     font-family: 'Courier New', Courier, monospace;

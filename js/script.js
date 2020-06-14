@@ -31,13 +31,23 @@
 
 // 
 
+//Timer / COUNTDOWN
+
+// var timer = 
+//  function countDown() {
+//      Math.floor((timer % (1000*60))/1000);
+//  document.getElementById("timer").innerHTML = seconds +"s"
+//  }
+// // if (timeleft < 0) {
+    
+
 let questions = [
     {
-        question:"what is my favorite color?",
+        question:"Which one of the following is a primitive data type?",
         answerChoices: [
-            "white",
-            "blue",
-            "black"
+            "strings",
+            "numbers",
+            "ALL of the Above"
         ],
         correctAnswer: 2
     },
@@ -49,20 +59,30 @@ let questions = [
             "Document Obtuse Model"
         ],
         correctAnswer:0
-    }
+    },
+    {   
+        question: "What does HTML stand for ?",
+        answerChoices : [
+            "Hyper Text Markup Languange",
+            "Hyper Text Markdown Language",
+            "Hyper Text Mark Language"
+        ],
+        correctAnswer:0
+    },
+    {
+        question: " Which one is a For Loop ? ",
+        answerChoices : [
+            "for (i = 0 ; i <subject.length; i++)",
+            "for {i = 0, i <subject.length, i++)",
+            "for (i = 0; i >subject.length, i++)"
+        ],
+        correctAnswer:0
+    },
 ];
 
 var position = 0;
 
-//Dont use a loop???
- // make all mult-choice answers buttons
- var btn = document.createElement("Button");
- //????
- document.body.appendChild(btn);
- //prints mult choice answers 
 
- // do this for all of the potential answers? 
- // 
 
 function displayQuestions() {
     document.getElementById("quiz-questions").style.display = "block";
@@ -73,49 +93,103 @@ function displayQuestions() {
     document.getElementById("answer-2").setAttribute("val", 1);
     document.getElementById("answer-3").innerHTML = questions[position].answerChoices[2];
     document.getElementById("answer-3").setAttribute("val", 2);
+
+
 } 
-// 
+
+// on click start quiz call display questions function
 document.getElementById("start-quiz").onclick = function() {
     document.getElementById("Intro").style.display = "none";
     displayQuestions()
 };
+//display wrong or right after user choice...
+function displayIncorrect () {
+    document.getElementById("incorrect").style.display = "block";
+    document.getElementById("incorrect").textContent="INCORRECT!";
+}
+function clearIncorrect () {
+    document.getElementById("incorrect").style.display ="none";
+}
+function displayCorrect () {
+    document.getElementById("correct").style.display = "block";
+    document.getElementById("correct").textContent="CORRECT!";
+}
+
+function clearCorrect () {
+    document.getElementById("correct").style.display ="none";
+}
+
+//hide last question and go to score section...
+function endQuiz() {
+    document.getElementById("quiz-questions").style.display = "none";
+    document.getElementById("final-score").style.display = "block";
+    document.getElementById("final-score").textContent ="Good JOB "
+    
+    //   call score section ****
+}
+
 
 //document.onclick('.start-btn')
+
+
 document.getElementById("answer-1").onclick = function() {
     if(document.getElementById("answer-1").getAttribute("val") == questions[position].correctAnswer) {
         console.log("Correct");
+        displayCorrect();
+        console.log(displayCorrect);
+        setTimeout(clearCorrect,1000);
+        console.log(clearCorrect);
+        
     } else {
         console.log("Wrong");
+        displayIncorrect();
+        setTimeout(clearIncorrect,1000);
+        console.log(clearIncorrect);
     }
     console.log("HELLO");
     position++;
-    displayQuestions();
+    
+    setTimeout(displayQuestions,1000);
 }
 
 document.getElementById("answer-2").onclick = function() {
     if(document.getElementById("answer-2").getAttribute("val") == questions[position].correctAnswer) {
         console.log("Correct");
+        displayCorrect();
+        console.log(displayCorrect);
+        setTimeout(clearCorrect,1000);
     } else {
         console.log("Wrong");
+        displayIncorrect();
+        setTimeout(clearIncorrect,1000);
     }
     console.log("HELLO");
     position++;
-    displayQuestions();
+    setTimeout(displayQuestions,1000);
 }
 
 document.getElementById("answer-3").onclick = function() {
     if(document.getElementById("answer-3").getAttribute("val") == questions[position].correctAnswer) {
         console.log("Correct");
+        displayCorrect();
+        setTimeout(clearCorrect,1000);
     } else {
         console.log("Wrong");
+        displayIncorrect();
+        setTimeout(clearIncorrect,1000);
     }
     console.log("HELLO");
     position++;
-    displayQuestions();
+    setTimeout(displayQuestions,1000);
 }
 
-// 
- var btn = document.querySelector(".btn");
+
+
+
+
+
+
+//  var btn = document.querySelector(".btn");
 
 // display question and multiple choice answers
 
