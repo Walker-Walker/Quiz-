@@ -29,14 +29,18 @@
 
 // Timer / COUNTDOWN
 
+
+
+
 var secondsLeft = 60;
 
+
 function countDown() {
-    secondsLeft-= 1;
+    secondsLeft -= 1;
     document.getElementById("timer").innerHTML = "Time:" + secondsLeft;
 }
 
-setInterval(countDown, 1000);
+
 
 let questions = [
     {
@@ -77,6 +81,8 @@ let questions = [
     },
 ];
 
+
+
 var position = 0;
 const delay = 1000;
 
@@ -84,7 +90,6 @@ const delay = 1000;
 function displayQuestions() {
     document.getElementById("quiz-questions").style.display = "block";
     document.getElementById("question").innerHTML = questions[position].question;
-    console.log(question);
     document.getElementById("answer-1").innerHTML = questions[position].answerChoices[0];
     document.getElementById("answer-1").setAttribute("val", 0);
     document.getElementById("answer-2").innerHTML = questions[position].answerChoices[1];
@@ -96,6 +101,7 @@ function displayQuestions() {
 
 // on click start quiz call display questions function
 document.getElementById("start-quiz").onclick = function () {
+    setInterval(countDown, 1000);
     document.getElementById("Intro").style.display = "none";
     displayQuestions()
 };
@@ -120,7 +126,7 @@ function clearCorrect() {
 function endQuiz() {
     document.getElementById("quiz-questions").style.display = "none";
     document.getElementById("final-score").style.display = "block";
-    document.getElementById("final-score").textContent = "All Done your final score is..."
+    document.getElementById("final-score").textContent = "All Done, your final score is  " + score;
     //enter initials...input box... 
     //   call high score section ****
     //   show initials and score
@@ -132,18 +138,22 @@ function endQuiz() {
 
 
 
+// localStorage.setItem("highScore", score);
+// console.log(localStorage.getItem("highScore"));// set to variable...print 
+
 document.getElementById("answer-1").onclick = function () {
     if (document.getElementById("answer-1").getAttribute("val") == questions[position].correctAnswer) {
         console.log("Correct");
         displayCorrect();
-        console.log(displayCorrect);
+        
         setTimeout(clearCorrect, delay);
-        console.log(clearCorrect);
-
+        
+        console.log(questionsCorrect++);
 
     } else {
         console.log("Wrong");
         displayIncorrect();
+        secondsLeft -= 5;
         setTimeout(clearIncorrect, delay);
         console.log(clearIncorrect);
     }
@@ -162,12 +172,14 @@ document.getElementById("answer-2").onclick = function () {
     if (document.getElementById("answer-2").getAttribute("val") == questions[position].correctAnswer) {
         console.log("Correct");
         displayCorrect();
-        console.log(displayCorrect);
+        
         setTimeout(clearCorrect, delay);
+        console.log(questionsCorrect++);
 
     } else {
         console.log("Wrong");
         displayIncorrect();
+        secondsLeft -= 5;
         setTimeout(clearIncorrect, delay);
     }
 
@@ -186,12 +198,13 @@ document.getElementById("answer-3").onclick = function () {
         console.log("Correct");
         displayCorrect();
         setTimeout(clearCorrect, delay);
-
-
+        questionsCorrect++;
+        console.log(questionsCorrect);
 
     } else {
         console.log("Wrong");
         displayIncorrect();
+        secondsLeft -= 5;
         setTimeout(clearIncorrect, delay);
 
     }
@@ -206,13 +219,12 @@ document.getElementById("answer-3").onclick = function () {
         setTimeout(displayQuestions, delay);
     }
 
-
+    
 
 }
 
-
-
-
+var questionsCorrect = 0;
+var score = questionsCorrect / 4;
 
 
 
