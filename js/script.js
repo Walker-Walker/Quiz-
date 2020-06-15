@@ -29,16 +29,14 @@
 
 // Timer / COUNTDOWN
 
-var secondsLeft = 60
+var secondsLeft = 60;
 
 function countDown() {
     secondsLeft-= 1;
-    document.getElementById("timer").innerHTML = secondsLeft;
+    document.getElementById("timer").innerHTML = "Time:" + secondsLeft;
 }
 
 setInterval(countDown, 1000);
-
-
 
 let questions = [
     {
